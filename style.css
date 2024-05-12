@@ -64,7 +64,9 @@ header h1{
 aside img{
     width: 100%;
 }
-
+main input{
+    margin-left: 10px;
+}
 @media (max-width: 500px){
     header ul{
         flex-direction: column;
@@ -76,7 +78,7 @@ aside img{
     main{
         grid-column: 1/5;
     }
-    sideBar{
+    aside{
         grid-row: 3;
     }
     footer{
