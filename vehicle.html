@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>people search</title>
+<title>Vehicle search</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body id="container">
     <header class="inside">
-        <h1>People search</h1>
+        <h1>Vehicle search</h1>
         <ul>
-            <li>People search</li>
-            <li><a href="vehicle.html">Vehicle search</a></li>
+            <li><a href = "people.html">People search</a></li>
+            <li>Vehicle search</li>
             <li><a href="addavehicle.html">Add a vehicle</a></li>
         </ul>
     </header>
@@ -19,19 +20,20 @@
             vehicle registration/plate number <input id='rego'></input>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button id="submit">Submit</button>
         </div>
         <div id="results"></div>
         <div id='message'></div>
     </main>
 
     
-    <sideBar class="inside">
-
-    </sideBar>
+    <aside class="inside">
+        <img src = "carl.jpg" id="img">
+    </aside>
     
     <footer class="inside">
 
     </footer>
+    <script src="vehicle.js" type="module"></script>
 </body>
 </html>

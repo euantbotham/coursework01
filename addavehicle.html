@@ -1,39 +1,49 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>people search</title>
+<title>Add a Vehicle</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-    <header>
-        <h1>People search</h1>
+<body id="container">
+    <header class="inside">
+        <h1>Add a Vehicle</h1>
         <ul>
-            <li>People search</li>
+            <li><a href = "people.html">People search</a></li>
             <li><a href="vehicle.html">Vehicle search</a></li>
-            <li><a href="addavehicle.html">Add a vehicle</a></li>
+            <li>Add a vehicle</li>
         </ul>
     </header>
     
-    <main>
-        <div>
-            Search by driver name <input id ='name'></input>
+    <main class ="inside">
+        <div id="q1">
+            <div>vehicle registration/plate number <input id="rego"></input></div>
+            <div> Vehicle make <input id ="make"></input></div>
+            <div> Vehicle model <input id ="model"></input></div>
+            <div> Vehicle colour <input id ="colour"></input></div>
+            <div> Vehicle owner <input id ="owner"></input></div>
+            <button id="Add">Add</button>
         </div>
-        <div>
-            Search by driver liscense number <input id='liscense'></input>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
+        <div id="q2">
+            <div>ID <input id="personid"></input></div>
+            <div>name <input id="name"></input></div>
+            <div>address <input id="address"></input></div>
+            <div>date of birth <input id="dob"></input></div>
+            <div>license number <input id="license"></input></div>
+            <div>expiry date <input id="expire"></input></div>
+            <button id="Add owner">Add owner</button>
         </div>
         <div id="results"></div>
         <div id='message'></div>
     </main>
     
-    <sideBar>
-
-    </sideBar>
+    <aside class = "inside">
+        <img src = "carl.jpg" id="img">
+    </aside>
     
-    <footer>
+    <footer class = "inside">
 
     </footer>
+    <script src="addavehicle.js" type="module"></script>
 </body>
 </html>

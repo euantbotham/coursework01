@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title>people search</title>
 <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body id="container">
     <header class ="inside">
         <h1>People search</h1>
         <ul>
@@ -23,18 +23,19 @@
             Search by driver liscense number <input id='liscense'></input>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button id="submit">Submit</button>
         </div>
         <div id="results"></div>
         <div id='message'></div>
     </main>
     
-    <sideBar class="inside">
-
-    </sideBar>
+    <aside class="inside">
+        <img src = "carl.jpg" id="img">
+    </aside>
     
     <footer class="inside">
 
     </footer>
+    <script src="people.js" type="module"></script>
 </body>
 </html>
