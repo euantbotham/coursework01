@@ -37,12 +37,14 @@ add.addEventListener("click" , () =>{
                 response.textContent = "Error"; 
             }else{
                 if(data.length > 0){
-                    supabase.from("Vehicles").insert({VehicleID: reg.value, Make: make.value, Model: model.value, Colour: colour.value,OwnerID : data.PersonID});
+                    supabase.from("Vehicles").insert({VehicleID: reg.value, Make: make.value, Model: model.value, Colour: colour.value,OwnerID : data[0].PersonID}).then(
+                        onlyVehicle(error)
+                    );
                 }else{
                     q1.style.display = "none";
                     q2.style.display = "block";
                     addOwner.addEventListener("click" ,addOwnerclicked);
-                    response.textContent = "enter personal details"
+                    response.textContent = "enter personal details";
                 }
             }
         });
@@ -53,20 +55,28 @@ add.addEventListener("click" , () =>{
 
 async function addOwnerclicked() {
     if(allPerson()){
-        console.log("here");
         try{
-            await  supabase.from("People").insert({PersonID : personid.value, Name : name.value , Address: address.value, DOB : dob.value, LicenseNumber : license.value, ExpiryDate: expire.value});
+            await supabase.from("People").insert({PersonID : personid.value, Name : name.value , Address: address.value, DOB : dob.value, LicenseNumber : license.value, ExpiryDate: expire.value});
             await supabase.from("Vehicles").insert({VehicleID: reg.value, Make: make.value, Model: model.value, Colour: colour.value,OwnerID : personid.value});
         } catch (error) {
             response.textContent = "Error";
         }
-        response.textContent = "'Vehicle added successfully"
+        response.textContent = "'Vehicle added successfully";
         q2.style.display = "none";
+        q1.style.display = "block";
     }else{
         response.textContent = "Error";
     }
 }
 
+function onlyVehicle(error){
+    console.log("here");
+    if (error){
+        response.textContent = "Error";
+    }else{
+    response.textContent = "'Vehicle added successfully";
+    }
+}
 
 function allPerson(){
     let complete = true;
